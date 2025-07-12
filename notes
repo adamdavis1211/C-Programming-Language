@@ -1,0 +1,23 @@
+
+
+
+1. get whole number part. (if exists)
+2. get fractional part. (if exists)
+
+
+
+myatof:
+	1. loop and skip whitespace.
+	2. if '+' or '-':
+		save and get next
+	3. if number:
+		3a. loop and collect until nondigit.
+		3b. save into *fp	
+	4. if nondigit is '.':
+		4a. get next
+		4b. if next is digit:
+			4c. collect until non digit
+		5b. save into *fp
+	5. else 
+		unget the character
+

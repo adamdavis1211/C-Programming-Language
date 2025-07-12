@@ -1,30 +1,27 @@
 #include <stdio.h>
+#include "util.c"
 
-/* This is a standard comment */
+int mystrlen(char s[]);
 
 int main() {
-    printf("Hello, world!\n"); /* Print greeting */
-    
-    /* Comment before declaration */
-    int x = 42;  /* Variable x initialized */
+	char str[] = "12345678";
+	printf("%d\n", mystrlen(str));
+}
 
-    char *str = "This is not a comment: /* not a real comment */";
-    
-    char ch = '/';  /* A char with slash */
-    char *quote = "String with escaped quote: \\\" and a slash: /";
+/* strelen: return length of string s */
+int mystrlen(char s[]) {
+	int n;
 
-    /*
-    Multi-line comment
-    still going...
-    done now.
-    */
+	for (n = 0; *s != '\0'; s++)
+		n++;
+	return n;
 
-    int a = 5;  /* nested? /* inner */ still outer */
+}
 
-    /* Unclosed comment
-    int b = 10;
+int v2mystrlen(char *s) {
+	char *p = s;
 
-    printf("This line is inside what looks like a comment\n");
-
-    return 0;
+	while (*p != '\0')
+		p++;
+	return p - s;
 }
